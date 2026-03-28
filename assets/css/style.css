@@ -1,0 +1,33 @@
+/*Estilo da pagina*/
+
+body {
+    background-color: #f5f0e8;
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 20px;
+}
+
+h1 {
+    color: #1a3a5c;
+    text-align: center;
+}
+
+h3 {
+    color: #555;
+}
+
+p {
+    font-size: 17px;
+    text-align: justify;
+    line-height: 1.8;
+}
+
+audio {
+    display: block;
+    margin: 10px 0;
+}
+
+iframe {
+    display: block;
+    margin: 10px 0;
+}

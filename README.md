@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-# 🧭 Horizonte Meu - Seu Atlas de Sonhos Interativo
-
-O Horizonte Meu é um projeto que transforma o planejamento de viagens e metas pessoais em uma experiência visual e interativa. Através de um mapa-múndi explorável, o usuário pode descobrir destinos, conhecer atrações turísticas icônicas e organizar sua própria lista de desejos para o futuro.
-=======
-
 # 🧭 Horizonte Meu — Seu Atlas de Sonhos Interativo
 
 Plataforma interativa para o mapeamento de metas e sonhos de viagem. Explore destinos globais através de um mapa dinâmico, crie roteiros turísticos reais e monte uma lista de desejos completamente personalizada.
@@ -89,4 +83,3 @@ horizonte-meu/
 
 *Horizonte Meu · Programação Web*
 
->>>>>>> 7a7ee8dff2b21c6fb90b2c70172809f109afe656
