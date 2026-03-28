@@ -1,33 +1,118 @@
 /*Estilo da pagina*/
 
+/* FONTES LOCAIS */
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('../fonts/PlayfairDisplay-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Regular.ttf');
+}
+
+/* VARIÁVEIS DE CORES */
+:root {
+    --azul-profundo:  #001449;
+    --azul-escuro:    #012677;
+    --azul-medio:     #005bc5;
+    --azul-claro:     #00b4fc;
+    --azul-ciano:     #17f9ff;
+    --dourado:        #f0a500;
+    --dourado-claro:  #ffb347;
+    --branco:         #f7f8fc;
+}
+ 
+/* GERAL */
 body {
-    background-color: #f5f0e8;
-    font-family: Arial, sans-serif;
-    color: #333;
-    margin: 20px;
+    background-color: var(--azul-profundo);
+    color: var(--branco);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 30px;
 }
-
+ 
+/* TÍTULOS */
 h1 {
-    color: #1a3a5c;
+    font-family: 'Playfair Display', serif;
+    color: var(--dourado);
+    font-size: 2rem;
     text-align: center;
+    border-bottom: 2px solid var(--azul-medio);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
 }
-
+ 
+h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--dourado);
+    font-size: 1.6rem;
+}
+ 
 h3 {
-    color: #555;
+    color: var(--azul-claro);
+    font-size: 1.2rem;
 }
-
+ 
+/* PARÁGRAFOS */
 p {
     font-size: 17px;
+    line-height: 1.9;
     text-align: justify;
-    line-height: 1.8;
+    color: var(--branco);
 }
-
+ 
+/* LINKS */
+a {
+    color: var(--dourado);
+    text-decoration: none;
+    font-weight: 700;
+}
+ 
+a:hover {
+    color: var(--dourado-claro);
+    text-decoration: underline;
+}
+ 
+/* LISTAS */
+ul {
+    color: var(--branco);
+    font-size: 17px;
+    line-height: 2;
+}
+ 
+li {
+    margin-bottom: 5px;
+}
+ 
+/* IMAGENS */
+img {
+    max-width: 100%;
+    border: 2px solid var(--azul-medio);
+}
+ 
+/* ÁUDIO */
 audio {
     display: block;
-    margin: 10px 0;
+    margin: 15px 0;
+    width: 350px;
 }
-
+ 
+/* VÍDEO / IFRAME */
 iframe {
     display: block;
-    margin: 10px 0;
+    margin: 15px 0;
+    border: 2px solid var(--azul-medio);
+}
+
+/* PICTURE */
+picture img {
+    border: 2px solid var(--dourado);
+    max-width: 600px;
+}
+ 
+/* DESTAQUE */
+strong {
+    color: var(--dourado-claro);
 }
