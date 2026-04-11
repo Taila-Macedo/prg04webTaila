@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizonte Meu</title>
+
+    <!--favicon-->
+    <link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
+
+    <!--css-->
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
+
+</head>
+<body>
+    
+   <!-- HEADER -->
+    <header>
+        <div class="header-brand">
+            <span>🧭</span>
+            <div>
+                <h1>Horizonte Meu</h1>
+                <small>Painel Administrativo</small>
+            </div>
+        </div>
+        <div class="header-actions">
+            <a href="../index.html" class="btn-home">🏠 Home</a>
+        </div>
+    </header>
+ 
+    <!-- MAIN -->
+    <main>
+        <div class="page-title">
+            <h2>👥 Gerenciar Usuários</h2>
+            <p>Lista de todos os usuários cadastrados no sistema.</p>
+        </div>
+ 
+        <!-- TOOLBAR -->
+        <div class="toolbar">
+            <div class="search-box">
+                <span>🔍</span>
+                <input type="text" id="busca" placeholder="Procurar usuário..." oninput="filtrarTabela()">
+            </div>
+            <button class="btn-add" onclick="alert('Funcionalidade de cadastro em desenvolvimento!')">
+                ⊕ Novo Usuário
+            </button>
+        </div>
+ 
+        <!-- TABELA -->
+        <div class="table-wrapper">
+            <table id="tabela-usuarios">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th>Perfil</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-id="1">
+                        <td><span class="id-badge">#001</span></td>
+                        <td>
+                            <div class="user-cell">
+                                <div class="avatar">AM</div>
+                                Ana Martins
+                            </div>
+                        </td>
+                        <td class="email-cell">ana.martins@email.com</td>
+                        <td><span class="role-badge role-admin">Admin</span></td>
+                        <td>
+                            <div class="acoes">
+                                <button class="btn-editar" onclick="alert('Editar usuário: Ana Martins')">✏️ Editar</button>
+                                <button class="btn-excluir" onclick="abrirModal(1, 'Ana Martins')">🗑️ Excluir</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-id="2">
+                        <td><span class="id-badge">#002</span></td>
+                        <td>
+                            <div class="user-cell">
+                                <div class="avatar">CS</div>
+                                Carlos Silva
+                            </div>
+                        </td>
+                        <td class="email-cell">carlos.silva@email.com</td>
+                        <td><span class="role-badge role-user">Usuário</span></td>
+                        <td>
+                            <div class="acoes">
+                                <button class="btn-editar" onclick="alert('Editar usuário: Carlos Silva')">✏️ Editar</button>
+                                <button class="btn-excluir" onclick="abrirModal(2, 'Carlos Silva')">🗑️ Excluir</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-id="3">
+                        <td><span class="id-badge">#003</span></td>
+                        <td>
+                            <div class="user-cell">
+                                <div class="avatar">JO</div>
+                                Julia Oliveira
+                            </div>
+                        </td>
+                        <td class="email-cell">julia.oliveira@email.com</td>
+                        <td><span class="role-badge role-user">Usuário</span></td>
+                        <td>
+                            <div class="acoes">
+                                <button class="btn-editar" onclick="alert('Editar usuário: Julia Oliveira')">✏️ Editar</button>
+                                <button class="btn-excluir" onclick="abrirModal(3, 'Julia Oliveira')">🗑️ Excluir</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-id="4">
+                        <td><span class="id-badge">#004</span></td>
+                        <td>
+                            <div class="user-cell">
+                                <div class="avatar">RF</div>
+                                Rafael Ferreira
+                            </div>
+                        </td>
+                        <td class="email-cell">rafael.ferreira@email.com</td>
+                        <td><span class="role-badge role-user">Usuário</span></td>
+                        <td>
+                            <div class="acoes">
+                                <button class="btn-editar" onclick="alert('Editar usuário: Rafael Ferreira')">✏️ Editar</button>
+                                <button class="btn-excluir" onclick="abrirModal(4, 'Rafael Ferreira')">🗑️ Excluir</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-id="5">
+                        <td><span class="id-badge">#005</span></td>
+                        <td>
+                            <div class="user-cell">
+                                <div class="avatar">LC</div>
+                                Larissa Costa
+                            </div>
+                        </td>
+                        <td class="email-cell">larissa.costa@email.com</td>
+                        <td><span class="role-badge role-admin">Admin</span></td>
+                        <td>
+                            <div class="acoes">
+                                <button class="btn-editar" onclick="alert('Editar usuário: Larissa Costa')">✏️ Editar</button>
+                                <button class="btn-excluir" onclick="abrirModal(5, 'Larissa Costa')">🗑️ Excluir</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-id="6">
+                        <td><span class="id-badge">#006</span></td>
+                        <td>
+                            <div class="user-cell">
+                                <div class="avatar">BN</div>
+                                Bruno Nunes
+                            </div>
+                        </td>
+                        <td class="email-cell">bruno.nunes@email.com</td>
+                        <td><span class="role-badge role-user">Usuário</span></td>
+                        <td>
+                            <div class="acoes">
+                                <button class="btn-editar" onclick="alert('Editar usuário: Bruno Nunes')">✏️ Editar</button>
+                                <button class="btn-excluir" onclick="abrirModal(6, 'Bruno Nunes')">🗑️ Excluir</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="table-footer">
+                <span id="contador">6 usuários encontrados</span>
+                <span>Horizonte Meu · Admin</span>
+            </div>
+        </div>
+    </main>
+ 
+    <!-- MODAL DE CONFIRMAÇÃO DE EXCLUSÃO -->
+    <div class="modal-overlay" id="modal-excluir">
+        <div class="modal">
+            <div class="modal-icon">⚠️</div>
+            <h3>Confirmar exclusão</h3>
+            <p id="modal-msg">Tem certeza que deseja excluir este usuário? Esta ação não pode ser desfeita.</p>
+            <div class="modal-btns">
+                <button class="btn-cancelar" onclick="fecharModal()">Cancelar</button>
+                <button class="btn-confirmar-excluir" onclick="confirmarExclusao()">Excluir</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Variável global para armazenar temporariamente o ID de quem será deletado
+        let idParaExcluir = null;
+
+        // Prepara o modal com as informações do item selecionado
+        function abrirModal(id, nome) {
+            idParaExcluir = id;
+            // Altera o texto do modal dinamicamente com o nome do usuário
+            document.getElementById('modal-msg').textContent =
+                `Tem certeza que deseja excluir "${nome}"? Esta ação não pode ser desfeita.`;
+            // Adiciona a classe CSS que torna o modal visível
+            document.getElementById('modal-excluir').classList.add('open');
+        }
+
+        // Limpa a variável de ID e esconde o modal
+        function fecharModal() {
+            idParaExcluir = null;
+            document.getElementById('modal-excluir').classList.remove('open');
+        }
+
+        // Executa a "exclusão" visual do item
+        function confirmarExclusao() {
+            if (idParaExcluir !== null) {
+                // Procura a linha da tabela (tr) que tem o atributo data-id correspondente
+                const linha = document.querySelector(`tr[data-id="${idParaExcluir}"]`);
+                if (linha) {
+                    // Em vez de deletar o HTML, adiciona uma classe (provavelmente para dar um efeito de sumir)
+                    linha.classList.add('excluido');
+                }
+                atualizarContador(); // Recontagem de itens ativos
+                fecharModal();       // Fecha a janela após excluir
+            }
+        }
+
+        // Fecha o modal se o usuário clicar no fundo escuro (fora da caixa branca)
+        document.getElementById('modal-excluir').addEventListener('click', function (e) {
+            if (e.target === this) fecharModal();
+        });
+
+        // Lógica da barra de pesquisa
+        function filtrarTabela() {
+            const termo = document.getElementById('busca').value.toLowerCase();
+            // Seleciona apenas as linhas que ainda não foram marcadas como excluídas
+            const linhas = document.querySelectorAll('#tabela-usuarios tbody tr:not(.excluido)');
+            
+            linhas.forEach(tr => {
+                const texto = tr.textContent.toLowerCase();
+                // Se o termo digitado existir no texto da linha, ela continua visível
+                if (texto.includes(termo)) {
+                    tr.style.display = '';
+                } else {
+                    tr.style.display = 'none'; // Caso contrário, esconde a linha
+                }
+            });
+
+            atualizarContador();
+        }
+
+        // Atualiza o texto que mostra a quantidade de registros na tela
+        function atualizarContador() {
+            // Conta apenas as linhas que não têm a classe 'excluido'
+            const total = document.querySelectorAll('#tabela-usuarios tbody tr:not(.excluido)').length;
+            // Ajusta o plural da frase (ex: "1 usuário encontrado" vs "2 usuários encontrados")
+            document.getElementById('contador').textContent = 
+                `${total} usuário${total !== 1 ? 's' : ''} encontrado${total !== 1 ? 's' : ''}`;
+        }
+    </script>
+
+</body>
+</html>

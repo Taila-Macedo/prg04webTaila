@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizonte Meu</title>
+
+    
+    <!--Adicionando o favicon -->
+    <link rel="shortcut icon" href="../assets/images/favicon.ico" 
+    type="images/x-icon">
+
+    <!--Css-->
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/login.css">
+
+</head>
+<body>
+    
+    <div class="login-card">
+        <div class="login-logo">
+            <span class="icon">🧭</span>
+            <h1>Horizonte Meu</h1>
+            <p>Acesso ao painel</p>
+        </div>
+
+        <form id="form-login" novalidate>
+
+             <div class="form-group">
+                <input type="email" id="email" name="email" placeholder=" " required autocomplete="email" title="Digite um e-mail válido">
+                <label for="email">E-mail</label>
+                <span class="error-msg">Por favor, insira um e-mail válido.</span>
+            </div>
+ 
+            <div class="form-group">
+                <input type="password" id="senha" name="senha" placeholder=" " required minlength="6" pattern=".{6,}" title="A senha deve ter no mínimo 6 caracteres">
+                <label for="senha">Senha</label>
+                <span class="error-msg">A senha deve ter pelo menos 6 caracteres.</span>
+            </div>
+ 
+            <button type="submit" class="btn-login">🔐 Entrar</button>
+            <div id="msg-erro">⚠️ Preencha todos os campos corretamente.</div>
+        </form>
+ 
+        <div class="login-footer">
+            <a href="#">Esqueceu a senha?</a>
+        </div>
+    </div>
+ 
+    <a href="../index.html" class="back-link">← Voltar para o início</a>
+
+    </div>
+
+        <script>
+        const form = document.getElementById('form-login');
+        const msgErro = document.getElementById('msg-erro');
+
+        //captura o evento de envio(clique no botão ou enter)
+        form.addEventListener('submit', function(e) {
+            // Impede que a página recarregue ao enviar o formulário
+            e.preventDefault();
+
+            const email = document.getElementById('email');
+            const senha = document.getElementById('senha');
+
+            //verifica se os campos seguem as regra do HTML
+            if (!email.checkValidity() || !senha.checkValidity()) {
+        // Mostra a mensagem de erro caso algo esteja inválido
+        msgErro.style.display = 'block';
+        
+        // Coloca o cursor no campo que precisa de atenção
+        if (!email.checkValidity()) email.focus();
+            else senha.focus();
+            } else {
+                // Se tudo estiver certo, esconde o erro e redireciona para a página admin
+                msgErro.style.display = 'none';
+                window.location.href = 'painel-admin.html';
+            }
+        });
+
+        // Seleciona todos os inputs e limpa o erro assim que o usuário volta a digitar
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('input', () => { 
+                msgErro.style.display = 'none'; 
+            });
+        });
+    </script>
+</body>
+</html>

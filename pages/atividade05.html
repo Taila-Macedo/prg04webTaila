@@ -3,42 +3,318 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horizonte Meu- paleta</title>
+    <title>Horizonte Meu — Paleta de Cores</title>
 
     <!--favicon-->
-    <link rel="shortcut icon" href="../assets/images/favicon.ico" type="images/x-icon">
-
-    <!--Css-->
+    <link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
+   
+    <!--css-->
+    <link rel="stylesheet" href="../assets/css/variables.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+
+    <style>
+        /* ===== HERO ===== */
+        .hero {
+            text-align: center;
+            padding: 60px 20px 40px;
+            animation: fadeDown 0.6s ease;
+        }
+
+        @keyframes fadeDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            color: var(--dourado);
+            font-size: 2.2rem;
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .hero .subtitulo {
+            color: var(--azul-claro);
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: 8px;
+            margin-bottom: 0;
+            text-align: center;
+        }
+
+        /* ===== TEXTO JUSTIFICATIVA ===== */
+        .justificativa {
+            max-width: 780px;
+            margin: 0 auto 50px;
+            padding: 0 24px;
+            animation: fadeUp 0.7s ease 0.1s both;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(16px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .justificativa p {
+            font-size: 1rem;
+            line-height: 1.9;
+            color: rgba(247, 248, 252, 0.8);
+            margin-bottom: 16px;
+        }
+
+        .justificativa p:last-child { margin-bottom: 0; }
+
+        /* destaque inline */
+        .justificativa strong {
+            color: var(--dourado-claro);
+        }
+
+        /* ===== TÍTULO SEÇÃO CORES ===== */
+        .section-title {
+            max-width: 900px;
+            margin: 0 auto 24px;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .section-title h3 {
+            color: var(--dourado);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            white-space: nowrap;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, rgba(240,165,0,0.4), transparent);
+        }
+
+        /* ===== GRID DE CORES ===== */
+        .paleta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+            max-width: 900px;
+            margin: 0 auto 60px;
+            padding: 0 24px;
+            animation: fadeUp 0.7s ease 0.2s both;
+        }
+
+        .cor-card {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: transform 0.25s, box-shadow 0.25s;
+            cursor: default;
+        }
+
+        .cor-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 36px rgba(0,0,0,0.4);
+        }
+
+        .cor-amostra {
+            height: 100px;
+            width: 100%;
+            position: relative;
+        }
+
+        /* indicador do hex ao hover */
+        .cor-amostra::after {
+            content: attr(data-hex);
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', monospace;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            opacity: 0;
+            background: rgba(0,0,0,0.35);
+            transition: opacity 0.2s;
+            color: #fff;
+        }
+
+        .cor-card:hover .cor-amostra::after { opacity: 1; }
+
+        .cor-info {
+            padding: 12px 14px;
+            background: rgba(1, 38, 119, 0.5);
+        }
+
+        .cor-nome {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--branco);
+            margin-bottom: 4px;
+        }
+
+        .cor-hex {
+            font-size: 0.75rem;
+            color: rgba(247,248,252,0.45);
+            font-family: 'Courier New', monospace;
+            letter-spacing: 1px;
+        }
+
+        /* variável CSS exibida */
+        .cor-var {
+            font-size: 0.7rem;
+            color: var(--azul-claro);
+            margin-top: 2px;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* ===== VOLTAR ===== */
+        .voltar {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .voltar a {
+            color: var(--azul-claro);
+            font-size: 0.88rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border: 1px solid rgba(0,180,252,0.3);
+            border-radius: 8px;
+            transition: background 0.2s, border-color 0.2s, color 0.2s;
+        }
+
+        .voltar a:hover {
+            background: rgba(0,180,252,0.1);
+            border-color: var(--azul-claro);
+            color: var(--branco);
+            text-decoration: none;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 600px) {
+            .paleta-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero h1 { font-size: 1.6rem; }
+        }
+    </style>
 </head>
 <body>
 
-        <h1>Escolha da paleta de cores do projeto</h1>
+    <!-- HERO -->
+    <div class="hero">
+        <h1>🎨 Paleta de Cores</h1>
+        <p class="subtitulo">Horizonte Meu · Identidade Visual</p>
+    </div>
 
+    <!-- JUSTIFICATIVA -->
+    <div class="justificativa">
+        <p>
+            Escolhi a paleta de <strong>tons de azul</strong> para o projeto "Horizonte Meu" porque o azul é a cor
+            que melhor representa o tema de viagens e exploração do mundo. O próprio nome do projeto remete
+            ao horizonte — aquela linha onde o céu encontra o oceano — e o azul captura exatamente essa sensação.
+        </p>
+        <p>
+            Segundo a psicologia das cores, o azul transmite <strong>competência, sabedoria, calma e confiança</strong>,
+            características essenciais para um site que inspira pessoas a conhecerem novos destinos. Além disso,
+            a paleta monocromática escolhida cria uma harmonia visual elegante e sofisticada, indo do
+            <strong>azul marinho profundo #001449</strong> até o <strong>azul ciano vibrante #17f9ff</strong>,
+            criando profundidade e movimento — como o próprio horizonte que muda a cada novo destino.
+        </p>
+    </div>
 
-                <p>Escolhi a paleta de tons de azul para o projeto "Horizonte Meu" porque o azul é a cor que melhor representa o tema de viagens e exploração do
-                    mundo. O próprio nome do projeto remete ao horizonte — aquela linha onde o céu encontra o oceano — e o azul captura exatamente essa sensação.
-                </p>
+    <!-- TÍTULO SEÇÃO -->
+    <div class="section-title">
+        <h3>Cores do Projeto</h3>
+    </div>
 
-                <p>Segundo a psicologia das cores, o azul transmite competência, sabedoria, calma e confiança, características essenciais para um site que inspira pessoas
-                    a conhecerem novos destinos. Além disso, a paleta monocromática escolhida cria uma harmonia visual elegante e sofisticada, indo do azul marinho
-                    profundo #001449 até o azul ciano vibrante #17f9ff, criando profundidade e movimento — como o próprio horizonte que muda a cada novo destino.
-                </p>
-          
-            <br>
-            <h3>Cores</h3>
-            <ul>
-                <li>Azul Profundo</li>
-                <li>Azul Escuro</li>
-                <li>Azul Médio</li>
-                <li>Azul Claro</li>
-                <li>Azul Ciano</li>
-                <li>Dourado</li>
-                <li>Dourado Claro</li>
-                <li>Branco</li>
-            </ul>
-        
-        <a href="../index.html" hreflang="pt-br">← Voltar à página inicial</a>
+    <!-- GRID DE CORES -->
+    <div class="paleta-grid">
+
+        <div class="cor-card">
+            <div class="cor-amostra" style="background:#001449;" data-hex="#001449"></div>
+            <div class="cor-info">
+                <div class="cor-nome">Azul Profundo</div>
+                <div class="cor-hex">#001449</div>
+                <div class="cor-var">--azul-profundo</div>
+            </div>
+        </div>
+
+        <div class="cor-card">
+            <div class="cor-amostra" style="background:#012677;" data-hex="#012677"></div>
+            <div class="cor-info">
+                <div class="cor-nome">Azul Escuro</div>
+                <div class="cor-hex">#012677</div>
+                <div class="cor-var">--azul-escuro</div>
+            </div>
+        </div>
+
+        <div class="cor-card">
+            <div class="cor-amostra" style="background:#005bc5;" data-hex="#005bc5"></div>
+            <div class="cor-info">
+                <div class="cor-nome">Azul Médio</div>
+                <div class="cor-hex">#005bc5</div>
+                <div class="cor-var">--azul-medio</div>
+            </div>
+        </div>
+
+        <div class="cor-card">
+            <div class="cor-amostra" style="background:#00b4fc;" data-hex="#00b4fc"></div>
+            <div class="cor-info">
+                <div class="cor-nome">Azul Claro</div>
+                <div class="cor-hex">#00b4fc</div>
+                <div class="cor-var">--azul-claro</div>
+            </div>
+        </div>
+
+        <div class="cor-card">
+            <div class="cor-amostra" style="background:#17f9ff;" data-hex="#17f9ff"></div>
+            <div class="cor-info">
+                <div class="cor-nome">Azul Ciano</div>
+                <div class="cor-hex">#17f9ff</div>
+                <div class="cor-var">--azul-ciano</div>
+            </div>
+        </div>
+
+        <div class="cor-card">
+            <div class="cor-amostra" style="background:#f0a500;" data-hex="#f0a500"></div>
+            <div class="cor-info">
+                <div class="cor-nome">Dourado</div>
+                <div class="cor-hex">#f0a500</div>
+                <div class="cor-var">--dourado</div>
+            </div>
+        </div>
+
+        <div class="cor-card">
+            <div class="cor-amostra" style="background:#ffb347;" data-hex="#ffb347"></div>
+            <div class="cor-info">
+                <div class="cor-nome">Dourado Claro</div>
+                <div class="cor-hex">#ffb347</div>
+                <div class="cor-var">--dourado-claro</div>
+            </div>
+        </div>
+
+        <div class="cor-card">
+            <div class="cor-amostra" style="background:#f7f8fc; border-bottom: 1px solid rgba(0,0,0,0.1);" data-hex="#f7f8fc"></div>
+            <div class="cor-info">
+                <div class="cor-nome">Branco</div>
+                <div class="cor-hex">#f7f8fc</div>
+                <div class="cor-var">--branco</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- VOLTAR -->
+    <div class="voltar">
+        <a href="../index.html">← Voltar à página inicial</a>
+    </div>
 
 </body>
 </html>

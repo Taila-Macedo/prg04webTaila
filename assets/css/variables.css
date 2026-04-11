@@ -1,0 +1,16 @@
+/* variables.css */
+:root {
+    --azul-profundo:  #001449;
+    --azul-escuro:    #012677;
+    --azul-medio:     #005bc5;
+    --azul-claro:     #00b4fc;
+    --azul-ciano:     #17f9ff;
+    --dourado:        #f0a500;
+    --dourado-claro:  #ffb347;
+    --branco:         #f7f8fc;
+    --verde:          #2ecc71;
+    --vermelho:       #e74c3c;
+    --vermelho-hover: #c0392b;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
