@@ -9,60 +9,136 @@
     <link rel="shortcut icon" href="infraestructure/assets/images/favicon.ico" 
     type="images/x-icon">
 
-    <!--Css-->
-    <link rel="stylesheet" href="infraestructure/assets/css/style.css">
-    <link rel="stylesheet" href="infraestructure/assets/css/variables.css">
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
 
+        <!--Css-->
+    <link rel="stylesheet" href="infraestructure/assets/css/style.css">
 </head>
 <body>
-    <!--Cabeçalho principal do site-->
-    <header>
-        <div>
-            <h1>🧭 Bem-vindo ao Horizonte Meu</h1>
+   <!-- ===== NAVBAR (Bootstrap) ===== -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="#">🧭 Horizonte Meu</a>
+ 
+            <!-- Botão hambúrguer para mobile -->
+            <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navMenu"
+                aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+ 
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto gap-1">
+                    <li class="nav-item">
+                        <a class="nav-link" href="infraestructure/pages/atividade03.html">
+                            🗺️<span class="texto">Destinos (atv03)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="infraestructure/pages/atividade04.html">
+                            🗼<span class="texto">Torre Eiffel (atv04)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="infraestructure/pages/atividade05.html">
+                            🎨<span class="texto">Paleta de Cores</span>
+                        </a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="nav-link fw-bold" style="color: var(--dourado) !important;" href="usuario/pages/login.html">
+                            🔐<span class="texto">Login</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-
-        <!--menu de navegação dentro do header-->
-        <nav id="menu">
-            <ul>
-                <li>
-                    <a href="infraestructure/pages/atividade03.html">
-                        🗺️<span class="texto">Destinos dos Sonhos (atv03)</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="infraestructure/pages/atividade04.html" hreflang="pt-br">
-                        🗼<span class="texto">Torre Eiffel — Paris (atv04)</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="infraestructure/pages/atividade05.html" hreflang="pt-br">
-                        🎨<span class="texto">Paleta de Cores</span>
-                    </a>
-                </li>
-                <li style="margin-left: 60px;">
-                    <a href="usuario/pages/login.html">
-                    🔐<span class="texto">Login</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-
-    <!--conteúdo principal da página-->
-    <main> 
-        <Section>
-            <h3>Onde seus sonhos ganham mapa.</h3>
-
-            <article>
-                <p>O mundo é vasto demais para caber apenas na imaginação. No Horizonte Meu, acreditamos que todo grande objetivo começa com um primeiro passo: o mapeamento.</p>
+    </nav>
+ 
+ 
+ 
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main class="container my-5">
+ 
+        <!-- Frase de abertura -->
+        <section class="mb-4">
+            <h3 style="color: var(--azul claro);">Onde seus sonhos ganham mapa.</h3>
+        </section>
+ 
+        <!-- Sobre o projeto -->
+        <section class="mb-5">
+            <h2 class="section-title">Sobre o Horizonte Meu</h2>
+            <div class="article-box">
+                <p>O mundo é vasto demais para caber apenas na imaginação. No <strong style="color: var(--dourado-claro);">Horizonte Meu</strong>, acreditamos que todo grande objetivo começa com um primeiro passo: o mapeamento.</p>
                 <p>Exploramos destinos, culturas e experiências para que você possa planejar a viagem dos seus sonhos com confiança e inspiração.</p>
-            </article>
-        </Section>
-    </main>
+            </div>
+        </section>
+ 
+        <!-- Cards de destaque — Grid Bootstrap -->
+        <section class="mb-5">
+            <h2 class="section-title">Explore Agora</h2>
+            <div class="row g-4">
+ 
+                <!-- Card 1 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card card-destino h-100 p-4">
+                        <div class="card-icon">🗺️</div>
+                        <div class="card-body px-0">
+                            <h5 class="card-title">Destinos dos Sonhos</h5>
+                            <p class="card-text">Descubra os lugares mais incríveis do mundo e planeje sua próxima aventura com roteiros detalhados.</p>
+                            <a href="infraestructure/pages/atividade03.html" class="btn btn-outline-warning btn-sm mt-2">Ver destinos →</a>
+                        </div>
+                    </div>
+                </div>
+ 
+                <!-- Card 2 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card card-destino h-100 p-4">
+                        <div class="card-icon">🗼</div>
+                        <div class="card-body px-0">
+                            <h5 class="card-title">Torre Eiffel — Paris</h5>
+                            <p class="card-text">Um mergulho na magia parisiense. Saiba tudo sobre um dos monumentos mais visitados do planeta.</p>
+                            <a href="infraestructure/pages/atividade04.html" class="btn btn-outline-warning btn-sm mt-2">Explorar →</a>
+                        </div>
+                    </div>
+                </div>
+ 
+                <!-- Card 3 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card card-destino h-100 p-4">
+                        <div class="card-icon">🎨</div>
+                        <div class="card-body px-0">
+                            <h5 class="card-title">Paleta de Cores</h5>
+                            <p class="card-text">Conheça a identidade visual do projeto e as cores que inspiram a experiência Horizonte Meu.</p>
+                            <a href="infraestructure/pages/atividade05.html" class="btn btn-outline-warning btn-sm mt-2">Ver paleta →</a>
+                        </div>
+                    </div>
+                </div>
+ 
+            </div>
+        </section>
 
-    <!--Rodapé do site-->
-    <footer>
-        <p>Horizonte Meu- Seu Atlas dos Sonhos</p>
+        <!-- Faixa CTA -->
+        <section class="mb-4">
+            <div class="article-box text-center">
+                <h3 style="color: var(--dourado);">Pronto para explorar?</h3>
+                <p>Faça login para acessar todos os recursos e salvar seus destinos favoritos.</p>
+                <a href="usuario/pages/login.html" class="btn btn-warning fw-bold">
+                    🔐 Entrar na conta
+                </a>
+            </div>
+        </section>
+ 
+     </main>
+
+     <!-- ===== FOOTER ===== -->
+    <footer class="text-center py-4 mt-4">
+        <p class="mb-0">Horizonte Meu — Seu Atlas dos Sonhos</p>
     </footer>
+ 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
