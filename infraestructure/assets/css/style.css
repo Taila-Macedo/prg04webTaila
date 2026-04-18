@@ -323,7 +323,7 @@ footer p {
 
 /* Celular */
 @media (max-width: 480px) {
-    header div h1 { font-size: 1.1rem; }
+    header div h1 { font-size: 1.2rem; }
 
     header nav a { font-size: 1.2rem; padding: 4px 8px; }
 
